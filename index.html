@@ -3,18 +3,25 @@
 <head><title>My first steps with AudioContext</title></head>
 <link rel="stylesheet" href="main.css">
 <body>
-<form>
-	<label for="wave">Wave:</label>
-	<select id="wave">
-		<option>sine</option>
-		<option>square</option>
-		<option>sawtooth</option>
-		<option>triangle</option>
-	</select>
-	<label for="freq">Frequency:</label> <input id="freq" value="330" />
-	<label for="vol">Volume:</label><input id="vol" value="0.5" />
-</form>
-<button id="test">click me</button>
+    <fieldset>
+        <legend>Oscillator</legend>
+        <label for="wave">Wave:</label>
+        <select id="wave">
+            <option>sine</option>
+            <option>square</option>
+            <option>sawtooth</option>
+            <option>triangle</option>
+        </select>
+        <label for="freq">Frequency:</label> <input id="freq" value="440" />
+        <label for="vol">Volume:</label><input id="vol" value="0.5" />
+        <label for="duration">Duration (ms):</label><input id="dura" value="2" />
+        <button id="oscillatorPlayButton">play wave</button>
+    </fieldset>
+    <fieldset>
+        <legend>Buffer</legend>
+        <button id="whiteNoiseButton">play white noise</button>
+        
+    </fieldset>
 <script src="main.js"></script>
 </body>
 </html>
