@@ -1,14 +1,14 @@
 var ac = new AudioContext();
 oscillatorPlayButton.onclick = function (e) {
-	var osc = ac.createOscillator();
-	var gain = ac.createGain();  
+    var osc = ac.createOscillator();
+    var gain = ac.createGain();  
     var duration = parseInt(dura.value) * 1000;
-	osc.connect(gain);
-	gain.connect(ac.destination);
-	osc.type = wave.value;
-	osc.frequency.value = freq.value;
-	gain.gain.value = vol.value;
-	osc.start();
+    osc.connect(gain);
+    gain.connect(ac.destination);
+    osc.type = wave.value;
+    osc.frequency.value = freq.value;
+    gain.gain.value = vol.value;
+    osc.start();
     window.setTimeout(function () {
         osc.stop();
         osc.disconnect();
@@ -28,4 +28,4 @@ whiteNoiseButton.onclick = function (e) {
     src.buffer = buf;
     src.connect(ac.destination);
     src.start();
-}
+};
