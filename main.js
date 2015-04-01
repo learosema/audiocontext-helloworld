@@ -49,3 +49,28 @@ whiteNoiseButton.onclick = function (e) {
     src.start();
 };
 
+freqModButton.onclick = function (e) {
+    // Output Gain
+    var outGain = ac.createGain();
+    
+    // Carrier
+    var carOsc = ac.createOscillator();
+    var carGain = ac.createGain();
+    outGain.gain.value = 1.0;
+    carOsc.frequency.value = 500;
+    carOsc.connect(carGain);
+    
+    // Modulator
+    var modOsc = ac.createOscillator();
+    var modGain = ac.createGain();
+    modOsc.frequency.value = 100;
+    modGain.gain.value = 300;
+    modOsc.connect(modGain);
+    modGain.connect(carOsc.frequency);
+    carGain.connect(outGain);
+    
+    // start
+    modOsc.start();
+    carOsc.start();
+    outGain.connect(ac.destination);
+};

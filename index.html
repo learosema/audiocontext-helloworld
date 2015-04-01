@@ -13,15 +13,18 @@
             <option>triangle</option>
         </select>
         <label for="freq">Frequency:</label> <input id="freq" value="440" />
-        <label for="vol">Volume:</label> <input id="vol" value="0.5" />
+        <label for="vol">Volume:</label> <input id="vol" value="1" />
         <label for="dura">Duration (s):</label> <input id="dura" value="2" />
-        <label for="dist">Distortion:</label> <input id="dist" value="400" />
+        <label for="dist">Distortion:</label> <input id="dist" value="0" />
         <button id="oscillatorPlayButton">play wave</button>
+    </fieldset>
+    <fieldset>
+        <legend>Frequency modulation</legend>
+        <button id="freqModButton">demo</button>
     </fieldset>
     <fieldset>
         <legend>Buffer</legend>
         <button id="whiteNoiseButton">play white noise</button>
-        
     </fieldset>
 <script src="main.js"></script>
 </body>
