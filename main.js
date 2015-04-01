@@ -57,13 +57,13 @@ freqModButton.onclick = function (e) {
     var carOsc = ac.createOscillator();
     var carGain = ac.createGain();
     outGain.gain.value = 1.0;
-    carOsc.frequency.value = 500;
+    carOsc.frequency.value = 440;
     carOsc.connect(carGain);
     
     // Modulator
     var modOsc = ac.createOscillator();
     var modGain = ac.createGain();
-    modOsc.frequency.value = 100;
+    modOsc.frequency.value = 10;
     modGain.gain.value = 300;
     modOsc.connect(modGain);
     modGain.connect(carOsc.frequency);
